@@ -1,0 +1,32 @@
+# Bundle patch for dsh-chat-background.
+#
+# This row mounts the plugin into the desktop profile. Its `config` block is the
+# only place the background is configured: change `media` to swap the picture or
+# clip, then reload the DSH window (or restart DSH if the row was just added).
+#
+# media            绝对路径（Windows 用正斜杠或双反斜杠），或 http(s)/data: URL
+# type             auto | image | video
+# mode             auto | inline | route   auto = 图片内联、视频走流式路由
+# opacity          0..1    媒体层不透明度
+# blur             像素     媒体层模糊半径
+# fit              cover | contain | fill
+# position         任意 CSS background-position，如 center / top
+# dim              0..1    压暗（或提亮）遮罩强度，用于保证文字可读
+# scrim            遮罩颜色，如 rgba(0,0,0,.38) / rgba(255,255,255,.25)
+# transparentSurfaces  true 时让外壳与侧栏底色透明，露出背景
+# fallback         媒体加载失败时的兜底背景色，如 #101114
+- insert:
+    - id: chat-background
+      name: dsh-chat-background
+      config:
+        media: ''
+        type: auto
+        mode: auto
+        opacity: 1
+        blur: 0
+        fit: cover
+        position: center
+        dim: 0.38
+        scrim: 'rgba(0,0,0,.38)'
+        transparentSurfaces: true
+        fallback: ''
