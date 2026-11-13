@@ -1,10 +1,10 @@
-# DeepSeek Harness-chat-background
+# dsh-chat-background
 
 给 DeepSeek Harness 桌面端 / Web 客户端换一张壁纸：本地或远程的图片，或循环播放的视频。背景铺在整个界面后面，外壳与侧栏底色变透明，消息气泡、输入框等卡片表面保持原样，文字仍然可读。
 
 ## 功能
 
-- 图片默认内联为 `data:` URL，不额外发请求；视频默认走流式路由 `/DeepSeek Harness-chat-bg/media`（支持 `Range`，可拖动进度）。
+- 图片默认内联为 `data:` URL，不额外发请求；视频默认走流式路由 `/dsh-chat-bg/media`（支持 `Range`，可拖动进度）。
 - 不透明度、磨砂度、图片/视频路径都在「设置 → 通用 → 聊天背景」里改：前两项输入即生效，路径回车即应用。
 - 配置缺失、空路径或读不到文件时只记一条 warning，不会让 DeepSeek Harness 启动失败；配置了却读不到图时，换一张图仍可当场生效。
 - 不透明度与磨砂度存在浏览器 `localStorage`，只属于本机这个窗口，不随 profile 同步。
@@ -18,7 +18,7 @@
    ```yaml
    - insert:
        - id: chat-background
-         name: DeepSeek Harness-chat-background
+         name: dsh-chat-background
          config:
            media: ''
            mode: auto
@@ -44,7 +44,7 @@
 
 ## 数据与边界
 
-- 不透明度与磨砂度存在 `localStorage`：`DeepSeek Harness-chat-background:opacity`、`DeepSeek Harness-chat-background:blur`。
+- 不透明度与磨砂度存在 `localStorage`：`dsh-chat-background:opacity`、`dsh-chat-background:blur`。
 - 配置在宿主侧启动时读取一次；页面上的数值改动即时生效，不需要重启。
 - 仓库不含密钥；媒体文件不随仓库分发，由使用者自行指定。
 
