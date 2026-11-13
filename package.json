@@ -1,7 +1,7 @@
 {
   "name": "dsh-chat-background",
   "version": "0.2.0",
-  "description": "为 DSH 桌面端/Web 客户端设置聊天背景：支持本地或远程图片与视频，并在「设置 → 通用」提供不透明度与磨砂度的实时百分比输入。",
+  "description": "为 DeepSeek Harness 桌面端/Web 客户端设置聊天背景：支持本地或远程图片与视频，并在「设置 → 通用」提供不透明度与磨砂度的实时百分比输入。",
   "type": "module",
   "main": "./lib/index.js",
   "exports": {
@@ -15,7 +15,7 @@
     "cordis.patch.yml",
     "README.md"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "engines": {
     "node": ">=20"
   },

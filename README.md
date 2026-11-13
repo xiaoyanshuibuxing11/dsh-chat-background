@@ -1,12 +1,12 @@
-# dsh-chat-background
+# DeepSeek Harness-chat-background
 
-给 DSH 桌面端 / Web 客户端换一张壁纸：本地或远程的图片，或循环播放的视频。背景铺在整个界面后面，外壳与侧栏底色变透明，消息气泡、输入框等卡片表面保持原样，文字仍然可读。
+给 DeepSeek Harness 桌面端 / Web 客户端换一张壁纸：本地或远程的图片，或循环播放的视频。背景铺在整个界面后面，外壳与侧栏底色变透明，消息气泡、输入框等卡片表面保持原样，文字仍然可读。
 
 ## 功能
 
-- 图片默认内联为 `data:` URL，不额外发请求；视频默认走流式路由 `/dsh-chat-bg/media`（支持 `Range`，可拖动进度）。
+- 图片默认内联为 `data:` URL，不额外发请求；视频默认走流式路由 `/DeepSeek Harness-chat-bg/media`（支持 `Range`，可拖动进度）。
 - 不透明度、磨砂度、图片/视频路径都在「设置 → 通用 → 聊天背景」里改：前两项输入即生效，路径回车即应用。
-- 配置缺失、空路径或读不到文件时只记一条 warning，不会让 DSH 启动失败；配置了却读不到图时，换一张图仍可当场生效。
+- 配置缺失、空路径或读不到文件时只记一条 warning，不会让 DeepSeek Harness 启动失败；配置了却读不到图时，换一张图仍可当场生效。
 - 不透明度与磨砂度存在浏览器 `localStorage`，只属于本机这个窗口，不随 profile 同步。
 
 ## 安装
@@ -18,13 +18,13 @@
    ```yaml
    - insert:
        - id: chat-background
-         name: dsh-chat-background
+         name: DeepSeek Harness-chat-background
          config:
            media: ''
            mode: auto
    ```
 
-3. 重启 DSH（宿主侧的行只在启动时装载一次），然后进「设置 → 通用」调数值。
+3. 重启 DeepSeek Harness（宿主侧的行只在启动时装载一次），然后进「设置 → 通用」调数值。
 
 ## 设置
 
@@ -40,11 +40,11 @@
 
 ## 配置项
 
-`cordis.patch.yml` 的 `config` 里可写：`media`、`type`（auto/image/video）、`mode`（auto/inline/route）、`opacity`、`blur`、`fit`、`position`、`dim`、`scrim`、`transparentSurfaces`、`fallback`。改完重启 DSH 生效。
+`cordis.patch.yml` 的 `config` 里可写：`media`、`type`（auto/image/video）、`mode`（auto/inline/route）、`opacity`、`blur`、`fit`、`position`、`dim`、`scrim`、`transparentSurfaces`、`fallback`。改完重启 DeepSeek Harness 生效。
 
 ## 数据与边界
 
-- 不透明度与磨砂度存在 `localStorage`：`dsh-chat-background:opacity`、`dsh-chat-background:blur`。
+- 不透明度与磨砂度存在 `localStorage`：`DeepSeek Harness-chat-background:opacity`、`DeepSeek Harness-chat-background:blur`。
 - 配置在宿主侧启动时读取一次；页面上的数值改动即时生效，不需要重启。
 - 仓库不含密钥；媒体文件不随仓库分发，由使用者自行指定。
 
@@ -54,6 +54,6 @@
 .
 ├── lib/index.js       宿主半侧：注入 style/script、内联图片、视频流式路由
 ├── lib/client.js      浏览器半侧：设置页的聊天背景行
-├── package.json       bundle 与 dsh.client 声明
+├── package.json       bundle 与 DeepSeek Harness.client 声明
 └── cordis.patch.yml   装载器补丁
 ```
